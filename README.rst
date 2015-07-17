@@ -9,10 +9,10 @@ django-foundation-forms
         :target: https://pypi.python.org/pypi/foundationform
 
 
-A simple Django template tag to work with Zurb Foundation
+Django template tags to work with Zurb Foundation forms
 
 * Free software: BSD license
-* Documentation: https://foundationform.readthedocs.org.
+* Documentation: https://django-foundation-form.readthedocs.org.
 
 Features
 --------
