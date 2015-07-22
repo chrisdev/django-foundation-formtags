@@ -8,12 +8,12 @@ register = template.Library()
 
 @register.filter
 def as_foundation(form):
-    template = get_template("utils/tags/foundation/form.html")
+    template = get_template("foundationform_tags/form.html")
     c = Context({"form": form})
     return template.render(c)
 
 
-@register.inclusion_tag('utils/tags/foundation/foundation_form_field.html')
+@register.inclusion_tag('foundationform_tags/foundation_form_field.html')
 def render_field(field):
     """
     Use this need tag to get more control over the layout of your forms
