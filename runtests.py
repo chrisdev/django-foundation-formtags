@@ -31,7 +31,7 @@ if not settings.configured:
 
 def runtests(*test_args):
     if not test_args:
-        test_args = ['django_pandas']
+        test_args = ['foundation_formtags']
 
     parent = os.path.dirname(os.path.abspath(__file__))
     sys.path.insert(0, parent)
