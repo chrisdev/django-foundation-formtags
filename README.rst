@@ -1,5 +1,5 @@
 ===============================
-django-foundation-forms
+django-foundation-formtags
 ===============================
 
 .. image:: https://img.shields.io/travis/chrisdev/foundationform.svg
@@ -12,7 +12,7 @@ django-foundation-forms
 Django template tags to work with Zurb Foundation forms
 
 * Free software: BSD license
-* Documentation: https://django-foundation-form.readthedocs.org.
+* Documentation: https://django-foundation-formtags.readthedocs.org.
 
 Features
 --------
