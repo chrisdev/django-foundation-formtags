@@ -16,14 +16,16 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
+    "Django>=1.8,<1.11",
 ]
 
 test_requirements = [
     # TODO: put package test requirements here
+    "Django>=1.8,<1.11",
 ]
 
 setup(
-    name='foundationform',
+    name='foundation_formtags',
     version='0.1.0',
     description="A simple Django template tag to work with Zurb Foundation",
     long_description=readme + '\n\n' + history,
@@ -31,15 +33,15 @@ setup(
     author_email='cclarke@chrisdev.com',
     url='https://github.com/chrisdev/foundationform',
     packages=[
-        'foundationform',
+        'foundation_formtags',
     ],
-    package_dir={'foundationform':
-                 'foundationform'},
+    package_dir={'foundation_formtags':
+                 'foundation_formtags'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
     zip_safe=False,
-    keywords='foundationform',
+    keywords='foundation_formtags',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -52,6 +54,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
-    test_suite='tests',
+    test_suite='runtests.runtests',
     tests_require=test_requirements
 )

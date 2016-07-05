@@ -1,40 +1,34 @@
-from django import forms
 from django.template import Template, Context
 import unittest
 
-
-CHOICES = (
-    ('a', 'Option 1'),
-    ('b', 'Option 2'),
-    ('c', 'Option 3'),
-)
-
-class SimpleForm(forms.Form):
-    text = forms.CharField(label='text')
-
-
-class ComplexForm(forms.Form):
-    char_field = forms.CharField()
-    choice_field = forms.ChoiceField(choices=CHOICES)
-    radio_choice = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
-    multiple_choice = forms.MultipleChoiceField(choices=CHOICES)
-    multiple_checkbox = forms.MultipleChoiceField(choices=CHOICES, widget=forms.CheckboxSelectMultiple)
-    file_fied = forms.FileField()
-    password_field = forms.CharField(widget=forms.PasswordInput)
-    textarea = forms.CharField(widget=forms.Textarea)
-    boolean_field = forms.BooleanField()
+from .forms import SimpleForm, ComplexForm
 
 
 class TestFoundationform(unittest.TestCase):
 
-    def setUp(self):
-        pass
+    def tag_test(self, template, context, contains):
+        t = Template('{% load foundation_formtags %}' + template)
+        c = Context(context)
+        self.assertIn(contains, t.render(c))
 
-    def test_something(self):
-        pass
+    def test_as_foundation_tag_simple(self):
+        data = {'text': 'Tests'}
+        simple_form = SimpleForm(data)
+        template = '{{ form|as_foundation }}'
+        context = {'form': simple_form}
+        contains = '<input id="id_text" name="text" type="text" value="Tests" />'
 
-    def tearDown(self):
-        pass
+        self.tag_test(template, context, contains)
+
+    def test_as_foundation_tag_complex(self):
+        data = {'char_field': 'Tests', 'password_field': 'password',
+                'choice_field': 'Option 1', 'boolean_field': 'True'}
+        simple_form = ComplexForm(data)
+        template = '{{ form|as_foundation }}'
+        context = {'form': simple_form}
+        contains = '<small class="error">This field is required.</small>'
+
+        self.tag_test(template, context, contains)
 
 if __name__ == '__main__':
     unittest.main()
