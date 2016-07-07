@@ -17,7 +17,9 @@ class ComplexForm(forms.Form):
     choice_field = forms.ChoiceField(choices=CHOICES)
     radio_choice = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     multiple_choice = forms.MultipleChoiceField(choices=CHOICES)
-    multiple_checkbox = forms.MultipleChoiceField(choices=CHOICES, widget=forms.CheckboxSelectMultiple)
+    multiple_checkbox = forms.MultipleChoiceField(
+        choices=CHOICES, widget=forms.CheckboxSelectMultiple
+    )
     file_field = forms.FileField()
     password_field = forms.CharField(widget=forms.PasswordInput)
     textarea = forms.CharField(widget=forms.Textarea)

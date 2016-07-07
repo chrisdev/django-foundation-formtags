@@ -1,14 +1,21 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 
-python:
-  - "3.5"
-  - "3.4"
-  - "2.7"
+python: 2.7
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements.txt
+env:
+  - TOXENV=py27-17
+  - TOXENV=py27-18
+  - TOXENV=py27-19
+  - TOXENV=py34-17
+  - TOXENV=py34-18
+  - TOXENV=py34-19
+  - TOXENV=py35-18
+  - TOXENV=py35-19
 
-# command to run tests, e.g. python setup.py test
-script: python setup.py test
+install:
+  - pip install --upgrade pip setuptools tox virtualenv coveralls
+
+script:
+  - tox
+
+after_success: coveralls

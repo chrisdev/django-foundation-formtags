@@ -16,12 +16,12 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
-    "Django>=1.8,<1.11",
+    "Django>=1.6,<=1.9.2",
 ]
 
 test_requirements = [
     # TODO: put package test requirements here
-    "Django>=1.8,<1.11",
+    "Django>=1.6,<=1.9.2",
 ]
 
 setup(

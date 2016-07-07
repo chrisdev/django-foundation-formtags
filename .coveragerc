@@ -1,0 +1,4 @@
+[run]
+source = foundation_formtags 
+omit = foundation_formtags/tests/*
+branch = 1
