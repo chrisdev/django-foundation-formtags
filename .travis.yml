@@ -3,16 +3,19 @@ language: python
 python: 2.7
 
 env:
-  - TOXENV=py27-17
-  - TOXENV=py27-18
-  - TOXENV=py27-19
-  - TOXENV=py34-17
-  - TOXENV=py34-18
-  - TOXENV=py34-19
+  - TOXENV=py27-django17
+  - TOXENV=py27-django18
+  - TOXENV=py27-django19
+  - TOXENV=py27-django_trunk
+  - TOXENV=py34-django17
+  - TOXENV=py34-django18
+  - TOXENV=py34-django19
+  - TOXENV=py34-django_trunk
   - TOXENV=py35-18
   - TOXENV=py35-19
+  - TOXENV=py35-django_trunk
 
-install:
+install
   - pip install --upgrade pip setuptools tox virtualenv coveralls
 
 script:
