@@ -11,8 +11,8 @@ env:
   - TOXENV=py34-django18
   - TOXENV=py34-django19
   - TOXENV=py34-django_trunk
-  - TOXENV=py35-18
-  - TOXENV=py35-19
+  - TOXENV=py35-django18
+  - TOXENV=py35-django19
   - TOXENV=py35-django_trunk
 
 install:
