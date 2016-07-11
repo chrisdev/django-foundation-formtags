@@ -27,11 +27,3 @@ Django template tags to work with Zurb Foundation forms
    project_info/contributing
    project_info/authors
    project_info/history
-
-Indices and Tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
