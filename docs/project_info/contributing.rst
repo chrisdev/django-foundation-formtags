@@ -52,7 +52,7 @@ If you are proposing a feature:
 
 
 Get Started!
-^^^^^^^^^^^^
+------------
 Ready to contribute? Here's how to set up `foundation_formtags` for local development.
 
 1. Fork the `foundation_formtags` repo on GitHub.
