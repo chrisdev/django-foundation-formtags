@@ -2,11 +2,10 @@
 Installation
 ============
 
+Create a virtualenv::
+
+    $ virtualenv my-env
+
 At the command line::
 
-    $ easy_install foundationform
-
-Or, if you have virtualenvwrapper installed::
-
-    $ mkvirtualenv foundationform
-    $ pip install foundationform
+    $ pip install django-foundation-formtags

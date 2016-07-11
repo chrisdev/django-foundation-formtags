@@ -3,23 +3,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to django-foundation-forms's documentation!
-======================================
+Django Foundation Forms
+=======================
 
-Contents:
+Django template tags to work with Zurb Foundation forms
+
+.. _getting_started:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Getting Started
 
-   readme
    installation
-   usage
-   contributing
-   authors
-   history
+   usage 
 
-Indices and tables
-==================
+
+.. _contributing:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Project Info
+
+   project_info/contributing
+   project_info/authors
+   project_info/history
+
+Indices and Tables
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
