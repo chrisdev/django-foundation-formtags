@@ -7,5 +7,6 @@ include README.rst
 recursive-include tests *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-
+recursive-include foundation_formtags/template*
+recursive-include foundation_formtags/tests
 recursive-include docs *.rst conf.py Makefile make.bat
