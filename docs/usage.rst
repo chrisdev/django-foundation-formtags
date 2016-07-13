@@ -4,12 +4,12 @@ Usage
 To start use django-foundation-forms in a project you must include in your settings::
 
     INSTALLED_APPS = (
-        'foundation_tags',
+        'foundation_formtags',
     )
     
 In the template load foundation tags by::
 
-    {% load foundation_tags %}
+    {% load foundation_formtags %}
 
 To use the django-form-foundation filter::
 
