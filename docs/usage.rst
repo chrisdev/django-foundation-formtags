@@ -5,6 +5,7 @@ To start use django-foundation-forms in a project you must include in your setti
 
     INSTALLED_APPS = (
         'foundation_formtags',
+        'widget_tweaks',
     )
     
 In the template load foundation tags by::
