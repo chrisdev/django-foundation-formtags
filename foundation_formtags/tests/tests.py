@@ -24,9 +24,9 @@ class TestFoundationform(unittest.TestCase):
         data = {'char_field': 'Tests', 'password_field': 'password',
                 'choice_field': 'Option 1', 'boolean_field': 'True'}
         simple_form = ComplexForm(data)
-        template = '{{ form|as_foundation }}'
+        template = '{{ form|as_foundation }}' + '{% load widget_tweaks %}'
         context = {'form': simple_form}
-        contains = '<small class="error">This field is required.</small>'
+        contains = '<small class="form-error is-visible">This field is required.</small>'
 
         self.tag_test(template, context, contains)
 
