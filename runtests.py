@@ -9,7 +9,6 @@ if not settings.configured:
     settings_dict = dict(
         INSTALLED_APPS=(
             'foundation_formtags',
-            'widget_tweaks',
             'foundation_formtags.tests',
         ),
         DATABASES={

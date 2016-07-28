@@ -24,7 +24,7 @@ class TestFoundationform(unittest.TestCase):
         data = {'char_field': 'Tests', 'password_field': 'password',
                 'choice_field': 'Option 1', 'boolean_field': 'True'}
         simple_form = ComplexForm(data)
-        template = '{{ form|as_foundation }}' + '{% load widget_tweaks %}'
+        template = '{{ form|as_foundation }}'
         context = {'form': simple_form}
         contains = '<small class="form-error is-visible">This field is required.</small>'
 
