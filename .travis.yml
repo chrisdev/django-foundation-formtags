@@ -19,7 +19,7 @@ env:
   - TOXENV=py35-django_trunk
 
 install:
-  - pip install --upgrade pip setuptools tox virtualenv coveralls
+  - pip install --upgrade pip setuptools tox virtualenv codecov 
 
 script:
   - tox
@@ -32,4 +32,5 @@ matrix:
     - env: TOXENV=py35-django19
     - env: TOXENV=py35-django_trunk
 
-after_success: coveralls
+after_success: 
+    - codecov
