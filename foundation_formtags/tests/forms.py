@@ -1,6 +1,5 @@
 from django import forms
 
-
 CHOICES = (
     ('a', 'Option 1'),
     ('b', 'Option 2'),
@@ -14,6 +13,7 @@ class SimpleForm(forms.Form):
 
 class ComplexForm(forms.Form):
     char_field = forms.CharField()
+    char_field_widget = forms.CharField(widget=forms.TextInput(attrs={'class':'foo'}))
     choice_field = forms.ChoiceField(choices=CHOICES)
     radio_choice = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
     multiple_choice = forms.MultipleChoiceField(choices=CHOICES)
