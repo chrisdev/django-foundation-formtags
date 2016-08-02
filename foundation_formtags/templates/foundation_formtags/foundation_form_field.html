@@ -4,6 +4,16 @@
     {{ field }}
 {% else %}
 
+    {% if field|is_checkbox %}
+       {{ field|add_error_class:"is-invalid-input" }}
+       {% if field.help_text %}
+            <small>{{ field.help_text|safe }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+            <small class="form-error is-visible chk">{{ error }}</small>
+        {% endfor %}
+    {% endif %}
+    
     {% if field.label %}
         <label for="{{ field.auto_id }}" class={% if field.errors %}"is-invalid-label"{% endif %}>
             {{ field.label|safe }}
@@ -11,23 +21,16 @@
                    <span class="required">*</span>
                 {% endif %}
         </label>
-        {% if field|is_checkbox %}
-           {{ field|add_error_class:"is-invalid-input" }}
-           {% if field.help_text %}
-                <small>{{ field.help_text|safe }}</small>
-            {% endif %}
-            {% for error in field.errors %}
-                <small class="form-error is-visible chk">{{ error }}</small>
-            {% endfor %}
-        {% else %}
-            {{ field|add_error_class:"is-invalid-input" }}
-            {% for error in field.errors %}
-                <small class="form-error is-visible">{{ error }}</small>
-            {% endfor %}
-            {% if field.help_text %}
-                <small>{{ field.help_text|safe }}</small>
-            {% endif %}
+    {% endif %}
 
+    {% if not field|is_checkbox %}
+        {{ field|add_error_class:"is-invalid-input" }}
+        {% for error in field.errors %}
+            <small class="form-error is-visible">{{ error }}</small>
+        {% endfor %}
+        {% if field.help_text %}
+            <small>{{ field.help_text|safe }}</small>
         {% endif %}
     {% endif %}
+    
 {% endif %}
