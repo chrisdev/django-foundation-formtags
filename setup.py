@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='django-foundation-formtags',
-    version='0.0.5',
+    version='0.0.6',
     description="Templatetags to add Zurb Foundation support to Django Forms",
     long_description=readme + '\n\n' + history,
     author="Christopher Clarke",
