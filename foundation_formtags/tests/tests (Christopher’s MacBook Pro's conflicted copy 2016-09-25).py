@@ -1,4 +1,3 @@
-#from django.template import Context
 from django.template import engines
 import unittest
 
@@ -8,7 +7,6 @@ from .forms import SimpleForm, ComplexForm
 def render_form(text, form=None, **context_args):
     tpl = engines['django'].from_string("{% load foundation_formtags %}" + text)
     context_args.update({'form': ComplexForm() if form is None else form})
-    #context = Context(context_args)
     return tpl.render(context_args)
 
 
@@ -44,7 +42,10 @@ class TestFoundationform(unittest.TestCase):
         template = '{{ form|as_foundation }}'
         context = {'form': complex_form}
         contains = 'type="password"'
-
+        self.filter_or_tag_test(template, context, contains)
+        contains = 'id="id_password_field"'
+        self.filter_or_tag_test(template, context, contains)
+        contains = 'name="password_field"'
         self.filter_or_tag_test(template, context, contains)
 
     def test_render_field_tag_simple(self):
@@ -56,11 +57,11 @@ class TestFoundationform(unittest.TestCase):
                     </form>'
         context = {'form': simple_form}
         contains = 'id="id_text"'
-
+        self.filter_or_tag_test(template, context, contains)
+        contains = 'name="text"'
         self.filter_or_tag_test(template, context, contains)
 
     def test_render_field_tag_complex(self):
-        #import ipdb; ipdb.set_trace() ### BREAK-POINT
         data = {'char_field': 'Tests', 'password_field': 'password',
                 'choice_field': 'Option 1', 'boolean_field': 'True'}
         complex_form = ComplexForm(data)
@@ -71,7 +72,10 @@ class TestFoundationform(unittest.TestCase):
                     </form>'
         context = {'form': complex_form}
         contains = 'id="id_password_field"'
-
+        self.filter_or_tag_test(template, context, contains)
+        contains = 'name="password_field"'
+        self.filter_or_tag_test(template, context, contains)
+        contains = 'type="password"'
         self.filter_or_tag_test(template, context, contains)
 
     def test_add_multiple_classes(self):
