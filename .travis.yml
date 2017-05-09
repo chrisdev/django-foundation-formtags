@@ -37,7 +37,8 @@ matrix:
       env: TOXENV=py35-django10
     - python: 3.5
       env: TOXENV=py35-django11
-TOXENV=py35-django_trunk
+    - python: 3.5
+      env: TOXENV=py35-django_trunk
   allow_failures:
     - python: 2.7
       env: TOXENV=py27-django_trunk
