@@ -9,18 +9,22 @@ env:
   - TOXENV=py27-django18
   - TOXENV=py27-django19
   - TOXENV=py27-django10
+  - TOXENV=py27-django11
   - TOXENV=py27-django_trunk
   - TOXENV=py34-django18
   - TOXENV=py34-django19
   - TOXENV=py34-django10
+  - TOXENV=py34-django11
   - TOXENV=py34-django_trunk
   - TOXENV=py35-django18
   - TOXENV=py35-django19
   - TOXENV=py35-django10
+  - TOXENV=py35-django11
   - TOXENV=py35-django_trunk
 
 install:
-  - pip install --upgrade pip setuptools tox virtualenv codecov 
+  - pip install --upgrade pip
+  - pip install --upgrade setuptools tox virtualenv codecov 
 
 script:
   - tox
@@ -32,6 +36,7 @@ matrix:
     - env: TOXENV=py35-django18
     - env: TOXENV=py35-django19
     - env: TOXENV=py35-django10
+    - env: TOXENV=py35-django11
     - env: TOXENV=py35-django_trunk
 
 after_success: 

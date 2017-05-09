@@ -11,7 +11,7 @@ register = template.Library()
 @register.filter
 def as_foundation(form):
     template = get_template("foundation_formtags/form.html")
-    c = Context({"form": form})
+    c = {"form": form}
     return template.render(c)
 
 
