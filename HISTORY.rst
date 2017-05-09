@@ -2,11 +2,17 @@
 
 History
 ========
+
+0.0.8 (2017-05-09)
+-------------------
+
+* Make it Compatible with Django 1.11
+
 0.0.7 (2016-09-25)
 -------------------
+
 * Make Compatible with Django 1.10
-* Minimum version is now Django 1.8. Use Version 0.0.6 for projects using older
-  versions of Django 
+* Minimum version is now Django 1.8. For earlier versions of Django use 0.0.6
 
 0.0.6 (2016-08-05)
 ------------------
