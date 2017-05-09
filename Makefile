@@ -67,7 +67,7 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source foundation_formtags setup.py test
+	coverage run --source python setup.py test
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html

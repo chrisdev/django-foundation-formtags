@@ -9,5 +9,5 @@ Development Lead
 
 Contributors
 ------------
-
-None yet. Why not be the first?
+* Daniel Andrlik <daniel@anderlik.org>
+* Parbhat Puri <me@parbhatpuri.com>
