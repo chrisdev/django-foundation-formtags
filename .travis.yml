@@ -36,6 +36,7 @@ matrix:
     - env: TOXENV=py35-django18
     - env: TOXENV=py35-django19
     - env: TOXENV=py35-django10
+    - env: TOXENV=py35-django11
     - env: TOXENV=py35-django_trunk
 
 after_success: 
