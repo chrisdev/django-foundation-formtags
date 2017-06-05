@@ -3,6 +3,11 @@
 History
 ========
 
+0.0.9 (2017-06-05)
+-------------------
+
+* Cleaned up travis configuration for tox to improve testing
+
 0.0.8 (2017-05-09)
 -------------------
 
