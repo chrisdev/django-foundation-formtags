@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+__version__ = '0.0.9'
 
 try:
     from setuptools import setup
@@ -26,7 +27,7 @@ test_requirements = [
 
 setup(
     name='django-foundation-formtags',
-    version='0.0.8',
+    version=__version__,
     description="Templatetags to add Zurb Foundation support to Django Forms",
     long_description=readme + '\n\n' + history,
     author="Christopher Clarke",
