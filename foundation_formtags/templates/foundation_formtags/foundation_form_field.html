@@ -13,13 +13,15 @@
             <small class="form-error is-visible chk">{{ error }}</small>
         {% endfor %}
     {% endif %}
-    
+
     {% if field.label %}
         <label for="{{ field.auto_id }}" class={% if field.errors %}"is-invalid-label"{% endif %}>
             {{ field.label|safe }}
-                {% if not field.field.required  %}
-                   <span class="optional">(optional)</span>
-                {% endif %}
+            {% if not field.field.required and use_optional %}
+                    <span class="optional">(optional)</span>
+            {% elif field.field.required and not use_optional %}
+                    <span class="required">*</span>
+            {% endif %}
         </label>
     {% endif %}
 
@@ -32,5 +34,5 @@
             <small>{{ field.help_text|safe }}</small>
         {% endif %}
     {% endif %}
-    
+
 {% endif %}

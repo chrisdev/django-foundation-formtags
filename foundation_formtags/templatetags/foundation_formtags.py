@@ -2,16 +2,21 @@
 
 import types
 from django import template
+from django.conf import settings
 from django.template.loader import get_template
-from django.template import Context
 from django.forms import CheckboxInput
 register = template.Library()
+
+
+FOUNDATION_FORMTAGS_USE_OPTIONAL = getattr(
+    settings, 'FOUNDATION_FORMTAGS_USE_OPTIONAL', False
+)
 
 
 @register.filter
 def as_foundation(form):
     template = get_template("foundation_formtags/form.html")
-    c = {"form": form}
+    c = {"form": form, "use_optional": FOUNDATION_FORMTAGS_USE_OPTIONAL}
     return template.render(c)
 
 
